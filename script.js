@@ -29,8 +29,40 @@ fetchButton.addEventListener("click", async () => {
 
     const data = await response.json();
 
+    let profile = {};
+
+    try {
+      const profileResponse = await fetch(
+        `https://api.chess.com/pub/player/${encodeURIComponent(username)}`
+      );
+
+      if (profileResponse.ok) {
+        profile = await profileResponse.json();
+      }
+    } catch (error) {
+      console.error("Could not fetch player profile:", error);
+    }
+
     results.replaceChildren();
 
+// Create the player header inside the screenshot area.
+const playerHeader = document.createElement("div");
+playerHeader.className = "player-header";
+
+if (profile.avatar) {
+  const avatar = document.createElement("img");
+  avatar.className = "player-avatar";
+  avatar.src = profile.avatar;
+  avatar.alt = `${profile.username || username}'s avatar`;
+  avatar.crossOrigin = "anonymous";
+  playerHeader.appendChild(avatar);
+}
+
+const playerName = document.createElement("h2");
+playerName.textContent = profile.username || username;
+playerHeader.appendChild(playerName);
+
+results.appendChild(playerHeader);
     const stats = [
       ["Daily", data.chess_daily?.last?.rating],
       ["Rapid", data.chess_rapid?.last?.rating],
