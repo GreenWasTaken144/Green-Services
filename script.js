@@ -67,6 +67,7 @@ fetchButton.addEventListener("click", async () => {
       screenshotButton.style.display = "inline-block";
     }
   } catch (error) {
+    screenshotButton.style.display = "none";
     results.replaceChildren();
 
     const errorCard = document.createElement("div");
