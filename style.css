@@ -27,6 +27,12 @@ body {
   font-size: 15px;
 }
 
+
 .container {
+  width: 80%;
+  margin: 24px auto;
   padding: 24px;
+  background-color: #2a2a2a;
+  border: 1px solid #00ff00;
+  border-radius: 0;
 }
