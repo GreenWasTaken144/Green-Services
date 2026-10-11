@@ -122,7 +122,7 @@ screenshotButton.addEventListener("click", async () => {
   try {
     const canvas = await html2canvas(results, {
       backgroundColor: "#1a1a1a",
-      scale: 2
+      scale: 2,
       useCORS: true
     });
 
