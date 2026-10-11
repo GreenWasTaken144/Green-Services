@@ -57,3 +57,31 @@ body {
 .linkcard:last-child:nth-child(odd) {
   grid-column: 1 / -1;
 }
+
+#chess-username {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 8px 0 16px;
+  padding: 12px;
+  background-color: #1a1a1a;
+  border: 1px solid #00ff00;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+#chess-username::placeholder {
+  color: #aaaaaa;
+}
+
+#fetch-chess-stats {
+  padding: 12px 20px;
+  background-color: #00ff00;
+  border: 1px solid #00ff00;
+  color: #1a1a1a;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
