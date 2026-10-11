@@ -1,6 +1,6 @@
 const usernameInput = document.getElementById("chess-username");
 const fetchButton = document.getElementById("fetch-chess-stats");
-const screenshotButton = document.getElementById("screenshot-stats");
+const screenshotButton = document.getElementById("screenshot-chess-stats");
 const results = document.getElementById("chess-stats-results");
 
 fetchButton.addEventListener("click", async () => {
