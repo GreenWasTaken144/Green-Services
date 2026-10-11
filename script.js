@@ -123,6 +123,7 @@ screenshotButton.addEventListener("click", async () => {
     const canvas = await html2canvas(results, {
       backgroundColor: "#1a1a1a",
       scale: 2
+      useCORS: true
     });
 
     const blob = await new Promise(resolve => {
