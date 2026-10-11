@@ -58,6 +58,10 @@ body {
   grid-column: 1 / -1;
 }
 
+.disclaimer {
+  color: #4a4a4a
+}
+
 #chess-username {
   display: block;
   box-sizing: border-box;
