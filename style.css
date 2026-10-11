@@ -75,7 +75,7 @@ body {
   color: #aaaaaa;
 }
 
-#fetch-chess-stats {
+#fetch-chess-stats, #screenshot-chess-stats {
   padding: 12px 20px;
   background-color: #00ff00;
   border: 1px solid #00ff00;
