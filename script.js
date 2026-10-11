@@ -75,6 +75,7 @@ fetchButton.addEventListener("click", async () => {
   }
 });
 
+
 screenshotButton.addEventListener("click", async () => {
   if (results.children.length === 0) {
     alert("Fetch some stats before taking a screenshot.");
@@ -87,12 +88,35 @@ screenshotButton.addEventListener("click", async () => {
       scale: 2
     });
 
-    const link = document.createElement("a");
-    link.download = "chess-stats.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    const blob = await new Promise(resolve => {
+      canvas.toBlob(resolve, "image/png");
+    });
+
+    if (!blob) {
+      throw new Error("Could not create the screenshot image.");
+    }
+
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        "image/png": blob
+      })
+    ]);
+
+    // Download the same screenshot.
+    const imageUrl = URL.createObjectURL(blob);
+    const downloadLink = document.createElement("a");
+
+    downloadLink.href = imageUrl;
+    downloadLink.download = "chess-stats.png";
+    downloadLink.click();
+
+    URL.revokeObjectURL(imageUrl);
+
+    alert("Screenshot copied and downloaded!");
   } catch (error) {
-    alert("Could not create the screenshot.");
     console.error(error);
+    alert(
+      "Screenshot failed. Check clipboard permissions and make sure the site uses HTTPS or localhost."
+    );
   }
 });
