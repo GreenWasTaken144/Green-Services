@@ -30,7 +30,6 @@ fetchButton.addEventListener("click", async () => {
     const data = await response.json();
 
     results.replaceChildren();
-    screenshotButton.style.display = "inline-block";
 
     const stats = [
       ["Daily", data.chess_daily?.last?.rating],
@@ -60,8 +59,12 @@ fetchButton.addEventListener("click", async () => {
       results.appendChild(card);
     });
 
+
     if (results.children.length === 0) {
       results.textContent = "No stats were available for this player.";
+      screenshotButton.style.display = "none";
+    } else {
+      screenshotButton.style.display = "inline-block";
     }
   } catch (error) {
     results.replaceChildren();
