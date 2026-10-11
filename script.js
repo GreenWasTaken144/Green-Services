@@ -30,6 +30,7 @@ fetchButton.addEventListener("click", async () => {
     const data = await response.json();
 
     results.replaceChildren();
+    screenshotButton.style.display = "inline-block";
 
     const stats = [
       ["Daily", data.chess_daily?.last?.rating],
