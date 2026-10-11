@@ -45,24 +45,24 @@ fetchButton.addEventListener("click", async () => {
 
     results.replaceChildren();
 
-// Create the player header inside the screenshot area.
-const playerHeader = document.createElement("div");
-playerHeader.className = "player-header";
+    // Create the player header inside the screenshot area.
+    const playerHeader = document.createElement("div");
+    playerHeader.className = "chess-player-header";
 
-if (profile.avatar) {
-  const avatar = document.createElement("img");
-  avatar.className = "player-avatar";
-  avatar.src = profile.avatar;
-  avatar.alt = `${profile.username || username}'s avatar`;
-  avatar.crossOrigin = "anonymous";
-  playerHeader.appendChild(avatar);
-}
+    if (profile.avatar) {
+      const avatar = document.createElement("img");
+      avatar.className = "chess-player-avatar";
+      avatar.src = profile.avatar;
+      avatar.alt = `${profile.username || username}'s avatar`;
+      avatar.crossOrigin = "anonymous";
+      playerHeader.appendChild(avatar);
+    }
 
-const playerName = document.createElement("h2");
-playerName.textContent = profile.username || username;
-playerHeader.appendChild(playerName);
+    const playerName = document.createElement("h2");
+    playerName.textContent = profile.username || username;
+    playerHeader.appendChild(playerName);
 
-results.appendChild(playerHeader);
+    results.appendChild(playerHeader);
     const stats = [
       ["Daily", data.chess_daily?.last?.rating],
       ["Rapid", data.chess_rapid?.last?.rating],
