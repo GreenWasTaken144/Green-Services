@@ -59,7 +59,8 @@ body {
 }
 
 .disclaimer {
-  color: #4a4a4a
+  color: #4a4a4a;
+  text-align: center;
 }
 
 #chess-username {
