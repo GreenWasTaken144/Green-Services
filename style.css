@@ -63,6 +63,21 @@ body {
   text-align: center;
 }
 
+
+.back-arrow {
+  color: #00ff00;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.back-arrow:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
 #chess-username {
   display: block;
   box-sizing: border-box;
