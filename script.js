@@ -63,23 +63,36 @@ fetchButton.addEventListener("click", async () => {
     playerHeader.appendChild(playerName);
 
     results.appendChild(playerHeader);
+
     const stats = [
-      ["Daily", data.chess_daily?.last?.rating],
-      ["Rapid", data.chess_rapid?.last?.rating],
-      ["Blitz", data.chess_blitz?.last?.rating],
-      ["Bullet", data.chess_bullet?.last?.rating],
-      ["Tactics", data.tactics?.highest?.rating],
-      ["Puzzle Rush", data.puzzle_rush?.best?.score],
-      ["FIDE", data.fide]
+      ["Daily", data.chess_daily?.last?.rating, "daily.png"],
+      ["Rapid", data.chess_rapid?.last?.rating, "rapid.png"],
+      ["Blitz", data.chess_blitz?.last?.rating, "blitz.png"],
+      ["Bullet", data.chess_bullet?.last?.rating, "bullet.png"],
+      ["Tactics", data.tactics?.highest?.rating, "tactics.png"],
+      ["Puzzle Rush", data.puzzle_rush?.best?.score, "puzzle-rush.png"],
+      ["FIDE", data.fide, null]
     ];
 
-    stats.forEach(([name, value]) => {
+    stats.forEach(([name, value, iconFile]) => {
       if (value == null) {
         return;
       }
 
       const card = document.createElement("div");
-      card.className = "linkcard";
+      card.className = "linkcard chess-stat-card";
+
+      if (iconFile) {
+        const icon = document.createElement("img");
+        icon.className = "chess-stat-icon";
+        icon.src = `images/chess-images/${iconFile}`;
+        icon.alt = "";
+        icon.setAttribute("aria-hidden", "true");
+        card.appendChild(icon);
+      }
+
+      const content = document.createElement("div");
+      content.className = "chess-stat-content";
 
       const title = document.createElement("h2");
       title.textContent = `${name} Rating`;
@@ -87,7 +100,8 @@ fetchButton.addEventListener("click", async () => {
       const rating = document.createElement("p");
       rating.textContent = value;
 
-      card.append(title, rating);
+      content.append(title, rating);
+      card.appendChild(content);
       results.appendChild(card);
     });
 
