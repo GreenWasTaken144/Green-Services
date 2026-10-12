@@ -133,3 +133,30 @@ body {
   margin: 0;
   overflow-wrap: anywhere;
 }
+
+
+.chess-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.chess-stat-icon {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.chess-stat-content {
+  min-width: 0;
+}
+
+.chess-stat-content h2 {
+  margin: 0 0 8px;
+}
+
+.chess-stat-content p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
