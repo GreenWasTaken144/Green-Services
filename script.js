@@ -95,8 +95,9 @@ fetchButton.addEventListener("click", async () => {
       const content = document.createElement("div");
       content.className = "chess-stat-content";
 
-      const title = document.createElement("h2");
-      title.textContent = `${name} Rating`;
+      title.textContent = name === "Puzzle Rush"
+        ? "Puzzle Rush Top Score"
+        : `${name} Rating`;
 
       const rating = document.createElement("p");
       rating.textContent = value;
