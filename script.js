@@ -3,6 +3,12 @@ const fetchButton = document.getElementById("fetch-chess-stats");
 const screenshotButton = document.getElementById("screenshot-chess-stats");
 const results = document.getElementById("chess-stats-results");
 
+usernameInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    fetchButton.click();
+  }
+});
+
 fetchButton.addEventListener("click", async () => {
   const username = usernameInput.value.trim();
 
