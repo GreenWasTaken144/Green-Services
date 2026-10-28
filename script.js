@@ -11,6 +11,7 @@ fetchButton.addEventListener("click", async () => {
     return;
   }
 
+  screenshotButton.style.display = "none";
   results.replaceChildren();
 
   const loadingCard = document.createElement("div");
