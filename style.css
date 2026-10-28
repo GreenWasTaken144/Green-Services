@@ -109,11 +109,11 @@ body {
   transition: transform 0.2s ease;
 }
 
-#fetch-chess-stats:hover #screenshot-chess-stats:hover {
+#fetch-chess-stats:hover, #screenshot-chess-stats:hover {
   transform: scale(1.05);
 }
 
-#fetch-chess-stats:active #screenshot-chess-stats:active{
+#fetch-chess-stats:active, #screenshot-chess-stats:active{
   transform: scale(0.95);
 }
 
