@@ -5,6 +5,11 @@ body {
   color: #fff;
 }
 
+.unselectable {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .gs-heading-container {
   display: flex;
   justify-content: space-between;
