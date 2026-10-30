@@ -42,7 +42,7 @@ body {
   border-radius: 0;
 }
 
-.linkcards {
+.cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
@@ -74,7 +74,7 @@ body {
 }
 
 
-.back-arrow {
+.home-button {
   color: #00ff00;
   font-size: 32px;
   font-weight: bold;
@@ -83,7 +83,7 @@ body {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.back-arrow:hover {
+.home-button:hover {
   text-decoration: none;
   color: #ffffff;
   transform: scale(1.05);
