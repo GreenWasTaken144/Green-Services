@@ -57,10 +57,15 @@ body {
   border: 1px solid #00ff00;
   color: #ffffff;
   text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
 .linkcard:last-child:nth-child(odd) {
   grid-column: 1 / -1;
+}
+
+.linkcard:hover {
+  transform: scale(1.05);
 }
 
 .disclaimer {
