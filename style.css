@@ -70,7 +70,7 @@ img {
 }
 
 .linkcard:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 .disclaimer {
@@ -125,7 +125,7 @@ img {
 }
 
 #fetch-chess-stats:hover, #screenshot-chess-stats:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
 }
 
 #fetch-chess-stats:active, #screenshot-chess-stats:active{
