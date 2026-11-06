@@ -22,7 +22,7 @@ fetchButton.addEventListener("click", async () => {
 
   const loadingCard = document.createElement("div");
   loadingCard.className = "linkcard";
-  loadingCard.textContent = "Fetching stats...";
+  loadingCard.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i> Fetching stats...`;
   results.appendChild(loadingCard);
 
   try {
