@@ -85,11 +85,7 @@ img {
   opacity: 0.7
 }
 
-.icon-fa-footer {
-  font-size: 25px
-}
-
-.home-button {
+.home-button, .icon-fa-footer {
   color: #00ff00;
   font-size: 32px;
   font-weight: bold;
