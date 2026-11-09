@@ -94,7 +94,7 @@ img {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.home-button:hover {
+.home-button:hover, .icon-fa-footer:hover {
   text-decoration: none;
   color: #ffffff;
   transform: scale(1.05);
